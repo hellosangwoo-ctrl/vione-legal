@@ -9,7 +9,7 @@
 
 $ErrorActionPreference = "Stop"
 
-$USER  = "Rigidpointadvisory"
+$USER  = "hellosangwoo-ctrl"
 $REPO  = "vione-legal"
 $DIR   = $PSScriptRoot   # 이 스크립트가 있는 폴더 = legal/
 
@@ -61,8 +61,8 @@ Write-Host "✓ Pages enabled" -ForegroundColor Green
 
 Write-Host ""
 Write-Host "🎉 배포 완료. 1~5분 후 다음 URL 동작:" -ForegroundColor Yellow
-Write-Host "   https://rigidpointadvisory.github.io/$REPO/" -ForegroundColor White
-Write-Host "   https://rigidpointadvisory.github.io/$REPO/privacy-policy.html" -ForegroundColor White
-Write-Host "   https://rigidpointadvisory.github.io/$REPO/terms-of-service.html" -ForegroundColor White
+Write-Host "   https://hellosangwoo-ctrl.github.io/$REPO/" -ForegroundColor White
+Write-Host "   https://hellosangwoo-ctrl.github.io/$REPO/privacy-policy.html" -ForegroundColor White
+Write-Host "   https://hellosangwoo-ctrl.github.io/$REPO/terms-of-service.html" -ForegroundColor White
 Write-Host ""
 Write-Host "→ App Store Connect 의 Privacy Policy URL 필드에 위 URL 입력하세요." -ForegroundColor Cyan
