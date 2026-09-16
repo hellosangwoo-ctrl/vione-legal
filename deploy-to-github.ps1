@@ -55,9 +55,19 @@ Write-Host "✓ commit" -ForegroundColor Green
 gh repo create "$USER/$REPO" --public --source=. --push --description "VI One legal documents (privacy, terms)"
 Write-Host "✓ repo created + pushed" -ForegroundColor Green
 
-# 6) Pages 활성화
-gh api -X POST "repos/$USER/$REPO/pages" -f "source[branch]=main" -f "source[path]=/" 2>&1 | Out-Null
-Write-Host "✓ Pages enabled" -ForegroundColor Green
+# 6) Pages 활성화 (JSON 본문 사용 — nested object 안전하게 전달)
+$pagesJson = '{"source":{"branch":"main","path":"/"}}'
+$pagesResp = $pagesJson | gh api -X POST "repos/$USER/$REPO/pages" --input - 2>&1
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "✓ Pages enabled" -ForegroundColor Green
+} elseif ($pagesResp -match "already exists") {
+    Write-Host "✓ Pages already enabled" -ForegroundColor Green
+} else {
+    Write-Host "⚠ Pages auto-enable failed. 수동 활성화 필요:" -ForegroundColor Yellow
+    Write-Host "  https://github.com/$USER/$REPO/settings/pages" -ForegroundColor Yellow
+    Write-Host "  → Source: 'Deploy from a branch' → Branch: main / root → Save" -ForegroundColor Yellow
+    Write-Host "  (응답: $pagesResp)" -ForegroundColor DarkGray
+}
 
 Write-Host ""
 Write-Host "🎉 배포 완료. 1~5분 후 다음 URL 동작:" -ForegroundColor Yellow
