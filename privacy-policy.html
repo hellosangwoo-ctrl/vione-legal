@@ -28,7 +28,7 @@ nav a:hover{color:#50AAEE}
 <nav><a href="https://rigidpointadvisory.com">← VI One 홈</a></nav>
 
 <h1>개인정보 처리방침</h1>
-<div class="meta">최종 갱신: 2026년 5월 13일 · 시행: App Store 출시일</div>
+<div class="meta">최종 갱신: 2026년 9월 29일 · 시행: 2026년 10월 6일</div>
 
 <p>VI One ("당사")은 소상공인을 위한 AI 기반 CRM 모바일 애플리케이션을 운영합니다. 본 방침은 이용자의 개인정보가 어떻게 수집·이용·보호되는지를 설명합니다.</p>
 
@@ -65,6 +65,8 @@ nav a:hover{color:#50AAEE}
   <tr><td>AI 분석·인사이트 생성</td><td>이용자 동의</td></tr>
   <tr><td>고객 응대 기록 보관</td><td>정당한 이익 / 동의</td></tr>
   <tr><td>서비스 개선·통계</td><td>정당한 이익 (가명화)</td></tr>
+  <tr><td>매장을 대신한 예약 안내 문자·알림톡 발송</td><td>계약 이행</td></tr>
+  <tr><td>매장을 대신한 광고성 정보 전송 (수신자 사전 동의 시에 한함)</td><td>수신자 사전 동의</td></tr>
   <tr><td>법적 의무 이행</td><td>법적 의무</td></tr>
 </table>
 
@@ -79,12 +81,30 @@ nav a:hover{color:#50AAEE}
 
 <h2>4. 제3자 제공 및 위탁</h2>
 
+<p>당사는 이용자의 개인정보를 제3자에게 판매하거나 제공하지 않습니다. 아래는 서비스 제공에 필요한 범위에서의 <b>처리위탁</b>이며, 수탁자는 위탁받은 업무 목적 외로 개인정보를 이용할 수 없고 재위탁이 금지됩니다.</p>
+
+<div class="notice"><b>당사의 지위</b> — 당사는 두 가지 지위를 동시에 가집니다. ① <b>매장(이용자) 회원 정보</b>에 대해서는 직접 개인정보처리자입니다. ② <b>매장이 입력한 손님 정보</b>에 대해서는 매장으로부터 위탁받아 처리하는 수탁자입니다. 따라서 손님에 대한 개인정보 수집·이용 동의와 광고성 정보 수신동의를 취득할 책임은 원칙적으로 매장에 있으며, 이는 이용약관에 명시되어 있습니다. 다만 당사는 발송하는 광고성 메시지에 무료수신거부 안내를 삽입하여, 손님이 당사를 통해서도 즉시 수신을 거부할 수 있는 경로를 제공합니다.</div>
+
 <h3>4-1. 위탁 처리 (Sub-processors)</h3>
 <table>
   <tr><th>수탁자</th><th>위탁 업무</th><th>리전</th></tr>
-  <tr><td>Supabase, Inc.</td><td>데이터베이스·인증·스토리지</td><td>대한민국 서울 (ap-northeast-2)</td></tr>
+  <tr><td>주식회사 솔라피 (SOLAPI)</td><td>문자(SMS/LMS) 및 카카오 알림톡 발송 대행</td><td>대한민국</td></tr>
+  <tr><td>Supabase, Inc.</td><td>데이터베이스·인증·스토리지</td><td>대한민국 서울 (ap-northeast-2) · 법인 소재 US</td></tr>
   <tr><td>OpenAI, L.L.C.</td><td>AI 응답 생성·요약 (GPT-4o, Whisper)</td><td>US</td></tr>
+  <tr><td>Twilio Inc.</td><td>해외 발신 메시지·메시지 수신 중계 (해당 시)</td><td>US</td></tr>
+  <tr><td>Resend, Inc.</td><td>이메일 발송 대행</td><td>US</td></tr>
+  <tr><td>주식회사 비바리퍼블리카 (토스플레이스)</td><td>매장이 연동한 경우에 한하여 카드매출 내역 조회</td><td>대한민국</td></tr>
   <tr><td>Apple Inc.</td><td>푸시 알림·결제·크래시 분석</td><td>글로벌</td></tr>
+</table>
+
+<h3>4-2. 개인정보의 국외 이전</h3>
+<p>당사는 「개인정보 보호법」 제28조의8 제1항 제3호에 따라 아래 사항을 공개하며, 이로써 국외 이전에 관한 별도 동의를 갈음합니다. 이용자는 국외 이전을 거부할 수 있으나, 이 경우 해당 기능(AI 요약·응대, 해외 발신 메시지, 이메일 발송)의 이용이 제한될 수 있습니다. 거부 의사는 아래 9장의 연락처로 알려주시기 바랍니다.</p>
+<table>
+  <tr><th>이전받는 자</th><th>국가</th><th>이전 항목</th><th>이전 목적</th><th>보유·이용기간</th><th>이전 방법</th></tr>
+  <tr><td>OpenAI, L.L.C.</td><td>미국</td><td>통화·문의 텍스트 (전화번호·주민등록번호·이메일·카드번호 자동 마스킹 후 전송)</td><td>AI 요약·응답 생성</td><td>저장하지 않도록 요청(store=false)하여 전송 — 처리 즉시 파기</td><td>HTTPS API 전송(암호화)</td></tr>
+  <tr><td>Twilio Inc.</td><td>미국</td><td>수신자 전화번호, 메시지 본문</td><td>해외 발신 메시지 중계</td><td>발송 완료 후 벤더 정책에 따름</td><td>HTTPS API 전송(암호화)</td></tr>
+  <tr><td>Resend, Inc.</td><td>미국</td><td>수신자 이메일 주소, 메일 본문</td><td>이메일 발송 중계</td><td>발송 완료 후 벤더 정책에 따름</td><td>HTTPS API 전송(암호화)</td></tr>
+  <tr><td>Supabase, Inc.</td><td>미국 (법인) · 서버는 대한민국 서울</td><td>회원 정보, 매장 운영 데이터</td><td>데이터베이스 운영·인증</td><td>회원 탈퇴 또는 삭제 시까지</td><td>저장은 국내 리전, 운영·지원 목적 접근 시 암호화 전송</td></tr>
 </table>
 
 <h2>5. 이용자의 권리</h2>
@@ -117,9 +137,9 @@ nav a:hover{color:#50AAEE}
 <h2>9. 연락처</h2>
 <table>
   <tr><th>구분</th><th>연락처</th></tr>
-  <tr><td>운영자</td><td>리지드포인트 어드바이져리 (사업자등록번호: 595-08-03684)</td></tr>
-  <tr><td>주소</td><td>서울시 종로구 송원길 99, 209동 404호</td></tr>
-  <tr><td>개인정보보호책임자</td><td>박상우 · hellosangwoo@gmail.com</td></tr>
+  <tr><td>운영자</td><td>리지포인트 어드바이저리 (Rigid Point Advisory) · 사업자등록번호 595-08-03684 · 대표 박상우</td></tr>
+  <tr><td>주소</td><td>서울특별시 종로구 송월길 99, 209동 4층 404호 (홍파동, 경희궁자이 2단지)</td></tr>
+  <tr><td>개인정보 보호책임자</td><td>박상우 (직책: 대표) · hellosangwoo@gmail.com · 전화 010-9189-7853</td></tr>
   <tr><td>일반 문의</td><td>hellosangwoo@gmail.com</td></tr>
 </table>
 
